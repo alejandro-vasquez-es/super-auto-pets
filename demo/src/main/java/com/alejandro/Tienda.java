@@ -8,24 +8,33 @@ import com.alejandro.helpers.Menu;
 import com.alejandro.helpers.NombresMascotas;
 import com.alejandro.jugador.Jugador;
 import com.alejandro.jugador.JugadorReal;
-import com.alejandro.mascotas.Mascota;
 
 public class Tienda {
 
 	public String[] mascotas;
 	public String[] comidas;
-	public int tier = 0;
+	public int tier = 1;
+	int capacidad = 3;
+	public int ronda = 1;
 
 	public Tienda() {
-		mascotas = new String[NombresMascotas.tier1.length];
-		actualizarTier();
+		mascotas = new String[capacidad];
+		actualizarComidas();
 		rellenarMascotas();
+	}
 
+	public void siguienteRonda() {
+		actualizarTier();
+		actualizarComidas();
+		evolucionar();
+		rellenarMascotas();
 	}
 
 	public void actualizarTier() {
-		tier++;
-		actualizarComidas();
+		ronda++;
+		if (ronda == 2 || ronda == 4 || ronda == 6 || ronda == 8 || ronda == 10 || ronda == 12) {
+			tier++;
+		}
 	}
 
 	public void rellenarMascotas() {
@@ -82,12 +91,18 @@ public class Tienda {
 
 	}
 
-	public boolean serEvolucionada(int _tier) {
-		return true;
-	}
-
-	public void evolucionar(int _tier) {
-
+	public void evolucionar() {
+		switch (ronda) {
+			case 4:
+				capacidad = 4;
+				break;
+			case 7:
+				capacidad = 5;
+				break;
+			default:
+				break;
+		}
+		mascotas = new String[capacidad];
 	}
 
 	public void comprarMascotas(Jugador _jugador) {
@@ -216,7 +231,7 @@ public class Tienda {
 		if (opcion != opcionesMascotasFusionadas.length) {
 			String nombre = mascotasFusionables[opcion - 1];
 			if (_jugador.oro >= 3) {
-				_jugador.buscarMascota(nombre).subirNivel(true);
+				_jugador.buscarMascota(nombre).fusionar();
 				_jugador.oro -= 3;
 				System.out.println("Ahora tienes un total de " + _jugador.oro + " de oro");
 			} else {

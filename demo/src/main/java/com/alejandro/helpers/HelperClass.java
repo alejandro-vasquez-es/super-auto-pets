@@ -35,29 +35,61 @@ public class HelperClass {
 		System.out.println("Escoge una de las siguientes opciones: ");
 	}
 
-	public static Mascota instanciarTipoNombre(String _nombre) {
+	public static Mascota instanciarTipoNombre(String _nombre, Mascota[] _aliados, Mascota[] _enemigos) {
 		switch (_nombre) {
 			// TIER 1
 			case NombresMascotas.hormiga:
-				return new Hormiga();
+				return new Hormiga(_aliados, _enemigos);
 			case NombresMascotas.pescado:
-				return new Pescado();
+				return new Pescado(_aliados, _enemigos);
 			case NombresMascotas.mosquito:
-				return new Mosquito();
+				return new Mosquito(_aliados, _enemigos);
 			case NombresMascotas.grillo:
-				return new Grillo();
+				return new Grillo(_aliados, _enemigos);
 			case NombresMascotas.castor:
-				return new Castor();
+				return new Castor(_aliados, _enemigos);
 			case NombresMascotas.caballo:
-				return new Caballo();
+				return new Caballo(_aliados, _enemigos);
 			case NombresMascotas.nutria:
-				return new Nutria();
+				return new Nutria(_aliados, _enemigos);
 			case NombresMascotas.escarabajo:
-				return new Escarabajo();
+				return new Escarabajo(_aliados, _enemigos);
 
 			default:
-				return new Mascota();
+				return new Mascota(_aliados, _enemigos);
 		}
+	}
+
+	public static void imprimirMascotas(Mascota[] mascotas) {
+		for (Mascota mascota : mascotas) {
+			System.out.println(mascota);
+		}
+	}
+
+	public static int totalMascotas(Mascota[] mascotas) {
+		int totalMascotas = 0;
+		for (int i = 0; i < mascotas.length; i++) {
+			if (mascotas[i] != null) {
+				totalMascotas++;
+			}
+		}
+		return totalMascotas;
+	}
+
+	public static int obtenerIndiceMascota(Mascota _mascota, Mascota[] _aliados) {
+		int totalMascotas = totalMascotas(_aliados);
+		for (int i = 0; i < totalMascotas; i++) {
+			Mascota mascota = _aliados[i];
+			if (mascota.equals(_mascota)) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	public static Mascota obtenerMascotaAleatoria(Mascota[] mascotas, int totalMascotas) {
+		int randomNumber = (int) Math.floor(Math.random() * (totalMascotas - 1 + 1) + 1);
+		return mascotas[randomNumber - 1];
 	}
 
 }

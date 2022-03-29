@@ -6,8 +6,8 @@ import com.alejandro.mascotas.Mascota;
 
 public class JugadorReal extends Jugador {
 
-	public JugadorReal() {
-		this.oro = 200;
+	public JugadorReal(Jugador _oponente) {
+		super(_oponente);
 	}
 
 	public boolean comprarMascota(String _nombre) {
@@ -17,6 +17,8 @@ public class JugadorReal extends Jugador {
 			System.out.println("Has comprado una mascota de la clase " + _nombre);
 			System.out.println("Ahora tienes un total de " + oro + " de oro");
 
+		} else {
+			System.out.println("ya no tienes espacio para más mascotas, intenta vender algunas");
 		}
 
 		return true;
@@ -69,6 +71,29 @@ public class JugadorReal extends Jugador {
 		mascotas[_indice] = temporal;
 
 		System.out.println("Se ha reubicado a tu mascota");
+	}
+
+	public void accionVenderMascota() {
+
+		HelperClass.imprimirTextoGuiones("Estas a punto de vender una mascota");
+		System.out.println("obtendras oro equivalente a su nivel");
+		System.out.println("¿Cual deseas vender?");
+		String[] opciones = new String[totalMascotas + 1];
+		for (int i = 0; i < totalMascotas; i++) {
+			opciones[i] = (i + 1) + "- " + mascotas[i].nombre;
+		}
+		opciones[totalMascotas] = (totalMascotas + 1) + "- cancelar";
+
+		Menu menu = new Menu(opciones);
+		int opcion = menu.getOpcion();
+		if (opcion != totalMascotas + 1) {
+			System.out.println("Tu " + mascotas[opcion - 1].nombre + " se ha vendido extosamente");
+			System.out.println(
+					"Como el nivel de tu " + mascotas[opcion - 1].nombre + " es de " + mascotas[opcion - 1].nivel);
+			int oroGanado = venderMascota(mascotas[opcion - 1]);
+			System.out.println("recibes un total de " + oroGanado + " de oro");
+			oro += oroGanado;
+		}
 	}
 
 }

@@ -12,13 +12,16 @@ public class Mascota {
 	public String efecto;
 	public String nombre;
 	public int tier = 1;
+	protected Mascota[] aliados;
+	protected Mascota[] enemigos;
 
 	// public Mascota(String _nombre) {
 	// nombre = _nombre;
 	// System.out.println(nombre);
 	// }
-	public Mascota() {
-
+	public Mascota(Mascota[] _aliados, Mascota[] _enemigos) {
+		this.aliados = _aliados;
+		this.enemigos = _enemigos;
 	}
 
 	public void setEstadisticas(double _ataque, double _vida, String[] _tipos, String _nombre) {
@@ -49,23 +52,55 @@ public class Mascota {
 		Comidas.ejecutarComida(_comida, this);
 	}
 
-	public void subirNivel(boolean _mensaje) {
+	public void fusionar() {
 		experiencia++;
 		if (experiencia == 1) {
-			nivel++;
-			setAtaque(ataque + 1);
-			setVida(vida + 1);
-			if (_mensaje)
-				System.out.println("Tu mascota " + nombre + " ha subido de nivel");
+			subirNivel();
+			System.out.println("Tu mascota " + nombre + " ha subido de nivel");
 		} else if (experiencia == 4) {
-			nivel++;
-			setAtaque(ataque + 1);
-			setVida(vida + 1);
-			if (_mensaje)
-				System.out.println("Tu mascota " + nombre + " ha subido de nivel");
-		} else if (_mensaje) {
+			subirNivel();
+			System.out.println("Tu mascota " + nombre + " ha subido de nivel");
+		} else {
 			System.out.println("Tu mascota " + nombre + " ha aumentado su experiencia");
 		}
+	}
+
+	public void subirNivel() {
+		nivel++;
+		setAtaque(ataque + 1);
+		setVida(vida + 1);
+	}
+
+	public void atacar(Mascota _oponente) {
+		_oponente.recibirAtaque(this);
+	}
+
+	public void recibirAtaque(Mascota _oponente) {
+		setVida(vida - _oponente.ataque);
+	}
+
+	public boolean estaVivo() {
+
+		if (vida <= 0) {
+			return false;
+		}
+
+		return true;
+	}
+
+	public void morir() {
+	}
+
+	public void venderse() {
+
+	}
+
+	public void iniciarBatalla() {
+
+	}
+
+	public void comprarse() {
+
 	}
 
 }

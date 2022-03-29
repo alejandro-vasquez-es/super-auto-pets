@@ -10,26 +10,40 @@ public class Jugador {
 	public int victorias = 0;
 	public int oro = 10;
 	public Mascota[] mascotas;
-	public Mascota[] mascotasAlFrente;
+	public Mascota mascotaPeleadora;
 	public int indice = 0;
 	public int totalMascotas = 0;
+	private Jugador oponente;
+
+	public Jugador(Jugador _oponente) {
+		oponente = _oponente;
+	}
+
+	public void setOponente(Jugador _oponente) {
+		oponente = _oponente;
+	}
 
 	public boolean comprarMascota(String _nombre) {
 
 		if (totalMascotas < 5) {
-			mascotas[indice] = HelperClass.instanciarTipoNombre(_nombre);
+			mascotas[indice] = HelperClass.instanciarTipoNombre(_nombre, mascotas, oponente.mascotas);
+			mascotas[indice].comprarse();
 			oro -= 3;
 			totalMascotas++;
 			indice++;
 			return true;
 		} else {
-			System.out.println("ya no tienes espacio para más mascotas, intenta vender algunas");
 			return false;
 		}
 
 	}
 
+	public void anadirOro() {
+		oro += 10;
+	}
+
 	public Mascota buscarMascota(String _nombre) {
+		// TODO: remove this method
 		for (int i = 0; i < totalMascotas; i++) {
 			if (mascotas[i].nombre == _nombre) {
 				return mascotas[i];
@@ -38,6 +52,48 @@ public class Jugador {
 		}
 
 		return null;
+	}
+
+	public int venderMascota(Mascota _mascota) {
+		totalMascotas--;
+		indice--;
+		int oroGanado = _mascota.nivel;
+		_mascota.venderse();
+
+		eliminarMascota(_mascota);
+
+		return oroGanado;
+
+	}
+
+	public void eliminarMascota(Mascota _mascota) {
+		// reorganiza a las mascotas para que no haya null en el rango de totalMascotas
+		int indiceMascota = 0;
+		for (int i = 0; i < totalMascotas; i++) {
+			if (_mascota.equals(mascotas[i])) {
+				indiceMascota = i;
+				break;
+			}
+		}
+
+		mascotas[indiceMascota] = null;
+		for (int i = indiceMascota; i < mascotas.length - 1; i++) {
+			Mascota temp = mascotas[i + 1];
+			mascotas[i + 1] = mascotas[i];
+			mascotas[i] = temp;
+		}
+	}
+
+	public void setMascotaPeleadora() {
+		mascotaPeleadora = mascotas[0];
+	}
+
+	public void imprimirEstaidiscticasMascotas() {
+		for (int i = 0; i < totalMascotas; i++) {
+			System.out.println((i + 1) + ". " + mascotas[i].nombre);
+			System.out.println("con un total de " + mascotas[i].getAtaque() + " puntos de ataque");
+			System.out.println("con un total de " + mascotas[i].getVida() + " puntos de vida");
+		}
 	}
 
 }

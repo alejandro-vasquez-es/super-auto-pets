@@ -1,7 +1,9 @@
 package com.alejandro.motores;
 
+import com.alejandro.Batalla;
 import com.alejandro.helpers.HelperClass;
 import com.alejandro.helpers.Menu;
+import com.alejandro.jugador.IA;
 import com.alejandro.jugador.JugadorReal;
 import com.alejandro.mascotas.Mascota;
 
@@ -10,7 +12,9 @@ public class MotorModoArena extends MotorJuego {
 	public MotorModoArena() {
 		super();
 		modo = "Arena";
-		jugador = new JugadorReal();
+		oponente = new IA(jugador);
+		jugador.setOponente(oponente);
+		batalla = new Batalla(jugador, oponente);
 
 	}
 
@@ -25,10 +29,25 @@ public class MotorModoArena extends MotorJuego {
 		cicloJuego();
 	}
 
+	public void empezarBatalla() {
+		inicializarIA();
+		batalla.iniciarBatalla();
+		tienda.siguienteRonda();
+		jugador.anadirOro();
+		oponente.anadirOro();
+	}
+
+	public void inicializarIA() {
+		((IA) oponente).comprarMascotas(tienda.tier);
+		batalla.setOponente(oponente);
+	}
+
 	public void ejecutarOpcionMenu(int opcion) {
 		switch (opcion) {
 			case 1:
-				System.out.println("Empezando batalla...");
+				empezarBatalla();
+				menu.estaMenuAbierto = true;
+				cicloJuego();
 				break;
 			case 2:
 				accionesBatalla();
@@ -77,7 +96,7 @@ public class MotorModoArena extends MotorJuego {
 				tienda.fusionarMascota(jugador);
 				break;
 			case 5:
-				System.out.println("Vendiendo una mascota...");
+				((JugadorReal) jugador).accionVenderMascota();
 				break;
 
 			default:

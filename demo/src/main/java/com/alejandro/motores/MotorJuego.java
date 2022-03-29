@@ -1,5 +1,6 @@
 package com.alejandro.motores;
 
+import com.alejandro.Batalla;
 import com.alejandro.Tienda;
 import com.alejandro.helpers.HelperClass;
 import com.alejandro.helpers.Menu;
@@ -10,14 +11,17 @@ public class MotorJuego {
 
 	public String modo;
 	public Jugador jugador;
+	public Jugador oponente;
 	public Tienda tienda;
+	public Batalla batalla;
 	public Menu menu = new Menu(new String[] {
 			"1- Batallar",
 			"2- Acciones entre batallas",
 	});
 
 	public MotorJuego() {
-		jugador = new JugadorReal();
+		jugador = new JugadorReal(null);
+		// TODO: Give the player the state of their oponent
 		tienda = new Tienda();
 	}
 
