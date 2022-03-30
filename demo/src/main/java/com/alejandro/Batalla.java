@@ -16,12 +16,12 @@ public class Batalla {
 		oponente = _oponente;
 	}
 
-	public boolean iniciarBatalla() {
-		if (jugador.totalMascotas == 0) {
-			System.out.println("No puedes batallar sin mascotas, ve a la tienda a comprar");
-			return true;
-		}
+	public void verificarTotalMascotas() {
+		jugador.totalMascotas = HelperClass.totalMascotas(jugador.mascotas);
+		oponente.totalMascotas = HelperClass.totalMascotas(oponente.mascotas);
+	}
 
+	public void iniciarBatalla() {
 		aplicarHabilidadesInicioBatalla();
 
 		jugador.setMascotaPeleadora();
@@ -29,7 +29,11 @@ public class Batalla {
 
 		while (jugador.totalMascotas != 0 && oponente.totalMascotas != 0) {
 			batallaIndividual();
+			verificarTotalMascotas();
 		}
+
+		verificarMascotasMuertas(jugador);
+		verificarMascotasMuertas(oponente);
 
 		if (jugador.totalMascotas == 0 && oponente.totalMascotas == 0) {
 			HelperClass.imprimirTextoGuiones("Hubo un empate, ambos jugador se quedan sin mascotas");
@@ -38,8 +42,6 @@ public class Batalla {
 		} else if (oponente.totalMascotas == 0) {
 			ganarBatalla(jugador, "jugador");
 		}
-
-		return true;
 
 	}
 
@@ -56,12 +58,12 @@ public class Batalla {
 			mascota.iniciarBatalla();
 		}
 
-		verificarMuerteInicio(oponente);
-		verificarMuerteInicio(jugador);
+		verificarMascotasMuertas(oponente);
+		verificarMascotasMuertas(jugador);
 
 	}
 
-	public void verificarMuerteInicio(Jugador _jugador) {
+	public void verificarMascotasMuertas(Jugador _jugador) {
 		for (int i = 0; i < _jugador.totalMascotas; i++) {
 			if (intentarMatarMascota(_jugador.mascotas[i], _jugador)) {
 				i--;
@@ -87,6 +89,8 @@ public class Batalla {
 		System.out.println("Con un total de " + _jugador.totalMascotas + " mascotas vivas");
 		System.out.println("Las mascotas que quedaron vivas son: ");
 		_jugador.imprimirEstaidiscticasMascotas();
+		_jugador.victorias++;
+		_jugador.danarOponente();
 
 	}
 

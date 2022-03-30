@@ -12,7 +12,7 @@ public class IA extends Jugador {
 
 	public void comprarMascotas(int tier) {
 		boolean hayEspacios = (totalMascotas < 5);
-		while (oro > 3 && hayEspacios) {
+		while (oro >= 3 && hayEspacios) {
 			hayEspacios = comprarMascotaAleatoria(tier);
 		}
 	}

@@ -21,7 +21,6 @@ public class MotorJuego {
 
 	public MotorJuego() {
 		jugador = new JugadorReal(null);
-		// TODO: Give the player the state of their oponent
 		tienda = new Tienda();
 	}
 

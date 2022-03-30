@@ -6,7 +6,7 @@ import com.alejandro.mascotas.Mascota;
 public class Jugador {
 
 	public int vida = 10;
-	public int daño = 1;
+	public int ataque = 1;
 	public int victorias = 0;
 	public int oro = 10;
 	public Mascota[] mascotas;
@@ -21,6 +21,17 @@ public class Jugador {
 
 	public void setOponente(Jugador _oponente) {
 		oponente = _oponente;
+	}
+
+	public void danarOponente() {
+		oponente.vida -= ataque;
+	}
+
+	public void actualizarAtaque(int _ronda) {
+		if (_ronda == 4)
+			ataque = 2;
+		if (_ronda == 7)
+			ataque = 3;
 	}
 
 	public boolean comprarMascota(String _nombre) {
@@ -43,7 +54,6 @@ public class Jugador {
 	}
 
 	public Mascota buscarMascota(String _nombre) {
-		// TODO: remove this method
 		for (int i = 0; i < totalMascotas; i++) {
 			if (mascotas[i].nombre == _nombre) {
 				return mascotas[i];
@@ -67,6 +77,7 @@ public class Jugador {
 	}
 
 	public void eliminarMascota(Mascota _mascota) {
+
 		// reorganiza a las mascotas para que no haya null en el rango de totalMascotas
 		int indiceMascota = 0;
 		for (int i = 0; i < totalMascotas; i++) {

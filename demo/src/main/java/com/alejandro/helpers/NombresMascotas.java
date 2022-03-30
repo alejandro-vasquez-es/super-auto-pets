@@ -12,18 +12,44 @@ public class NombresMascotas {
 	final public static String sapo = "sapo";
 	final public static String dodo = "dodo";
 	final public static String elefante = "elefante";
-	final public static String puerco = "puerco";
+	final public static String puercoespin = "puercoespin";
 	final public static String pavorreal = "pavorreal";
 	final public static String rata = "rata";
 	final public static String zorro = "zorro";
 	final public static String arana = "arana";
+	final public static String dirtyRat = "dirtyRat";
+	final public static String camello = "camello";
+	final public static String mapache = "mapache";
+	final public static String jirafa = "jirafa";
+	final public static String tortuga = "tortuga";
+	final public static String caracol = "caracol";
+	final public static String oveja = "oveja";
+	final public static String conejo = "conejo";
+	final public static String lobo = "lobo";
+	final public static String buey = "Buey";
+	final public static String canguro = "canguro";
+	final public static String buho = "buho";
 
 	public static String[] tier1 = {
 			hormiga, pescado, mosquito, grillo, castor, caballo, nutria, escarabajo
 	};
 	public static String[] tier2 = {
-			hormiga, pescado, mosquito, grillo, castor, caballo, nutria, escarabajo, sapo, dodo, elefante, puerco,
-			puerco, pavorreal, rata, zorro, arana
+			hormiga, pescado, mosquito, grillo, castor, caballo, nutria, escarabajo,
+			sapo, dodo, elefante, puercoespin, pavorreal, rata, zorro, arana, };
+
+	public static String[] tier3 = {
+			camello,
+			mapache,
+			jirafa,
+			tortuga,
+			caracol,
+			oveja,
+			conejo,
+			lobo,
+			buey,
+			canguro,
+			buho,
+
 	};
 
 	public static String obtenerMascotaAleatoria(int _tier) {
@@ -35,6 +61,10 @@ public class NombresMascotas {
 		if (_tier == 2) {
 			int randomNumber = (int) Math.floor(Math.random() * (tier2.length - 1 + 1) + 1);
 			return tier2[randomNumber - 1];
+		}
+		if (_tier == 3) {
+			int randomNumber = (int) Math.floor(Math.random() * (tier2.length - 1 + 1) + 1);
+			return tier3[randomNumber - 1];
 		}
 		return "";
 

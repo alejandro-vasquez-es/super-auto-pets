@@ -8,6 +8,7 @@ public class JugadorReal extends Jugador {
 
 	public JugadorReal(Jugador _oponente) {
 		super(_oponente);
+		oro = 100;
 	}
 
 	public boolean comprarMascota(String _nombre) {

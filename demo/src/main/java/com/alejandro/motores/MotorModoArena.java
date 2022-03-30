@@ -19,7 +19,7 @@ public class MotorModoArena extends MotorJuego {
 	}
 
 	public void cicloJuego() {
-		System.out.println("¿Que deseas hacer ahora?");
+		HelperClass.imprimirTextoGuiones("¿Que deseas hacer ahora?");
 		int opcion = menu.getOpcion();
 		ejecutarOpcionMenu(opcion);
 	}
@@ -29,12 +29,21 @@ public class MotorModoArena extends MotorJuego {
 		cicloJuego();
 	}
 
-	public void empezarBatalla() {
+	public boolean empezarBatalla() {
+
+		if (jugador.totalMascotas == 0) {
+			System.out.println("No puedes batallar sin mascotas, ve a la tienda a comprar");
+			return false;
+		}
+
 		inicializarIA();
 		batalla.iniciarBatalla();
 		tienda.siguienteRonda();
+		jugador.actualizarAtaque(tienda.ronda);
+		oponente.actualizarAtaque(tienda.ronda);
 		jugador.anadirOro();
 		oponente.anadirOro();
+		return true;
 	}
 
 	public void inicializarIA() {

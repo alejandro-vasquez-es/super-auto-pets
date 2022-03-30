@@ -9,6 +9,14 @@ import com.alejandro.mascotas.tier1.Hormiga;
 import com.alejandro.mascotas.tier1.Mosquito;
 import com.alejandro.mascotas.tier1.Nutria;
 import com.alejandro.mascotas.tier1.Pescado;
+import com.alejandro.mascotas.tier2.Arana;
+import com.alejandro.mascotas.tier2.Dodo;
+import com.alejandro.mascotas.tier2.Elefante;
+import com.alejandro.mascotas.tier2.Pavorreal;
+import com.alejandro.mascotas.tier2.Puercoespin;
+import com.alejandro.mascotas.tier2.Rata;
+import com.alejandro.mascotas.tier2.Sapo;
+import com.alejandro.mascotas.tier2.Zorro;
 
 public class HelperClass {
 
@@ -55,6 +63,24 @@ public class HelperClass {
 			case NombresMascotas.escarabajo:
 				return new Escarabajo(_aliados, _enemigos);
 
+			// TIER 2
+			case NombresMascotas.sapo:
+				return new Sapo(_aliados, _enemigos);
+			case NombresMascotas.dodo:
+				return new Dodo(_aliados, _enemigos);
+			case NombresMascotas.elefante:
+				return new Elefante(_aliados, _enemigos);
+			case NombresMascotas.puercoespin:
+				return new Puercoespin(_aliados, _enemigos);
+			case NombresMascotas.pavorreal:
+				return new Pavorreal(_aliados, _enemigos);
+			case NombresMascotas.rata:
+				return new Rata(_aliados, _enemigos);
+			case NombresMascotas.zorro:
+				return new Zorro(_aliados, _enemigos);
+			case NombresMascotas.arana:
+				return new Arana(_aliados, _enemigos);
+
 			default:
 				return new Mascota(_aliados, _enemigos);
 		}
@@ -90,6 +116,20 @@ public class HelperClass {
 	public static Mascota obtenerMascotaAleatoria(Mascota[] mascotas, int totalMascotas) {
 		int randomNumber = (int) Math.floor(Math.random() * (totalMascotas - 1 + 1) + 1);
 		return mascotas[randomNumber - 1];
+	}
+
+	public static boolean mascotaExiste(Mascota _mascota, Mascota[] _mascotas) {
+
+		int totalMascotas = totalMascotas(_mascotas);
+
+		for (int i = 0; i < totalMascotas; i++) {
+			Mascota mascota = _mascotas[i];
+			if (mascota.equals(_mascota)) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 }
