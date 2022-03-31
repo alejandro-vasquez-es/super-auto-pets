@@ -22,4 +22,7 @@ public class IA extends Jugador {
 		return comprarMascota(nombre);
 	}
 
+	// TODO: Mejorar y revisar el manejo del oro de la ia, rotando entre fusionar y
+	// comprar
+
 }

@@ -35,9 +35,25 @@ public class NombresMascotas {
 	};
 	public static String[] tier2 = {
 			hormiga, pescado, mosquito, grillo, castor, caballo, nutria, escarabajo,
-			sapo, dodo, elefante, puercoespin, pavorreal, rata, zorro, arana, };
-
+			sapo, dodo, elefante, puercoespin, pavorreal, rata, zorro, arana,
+	};
 	public static String[] tier3 = {
+			// hormiga, pescado, mosquito, grillo, castor, caballo, nutria, escarabajo,
+			// sapo, dodo, elefante, puercoespin, pavorreal, rata, zorro, arana,
+			// camello,
+			// mapache,
+			// jirafa,
+			// tortuga,
+			// caracol,
+			// oveja,
+			// conejo,
+			lobo,
+			buey,
+			canguro,
+			buho,
+	};
+
+	public static String[] tierSolo3 = {
 			camello,
 			mapache,
 			jirafa,
@@ -63,8 +79,12 @@ public class NombresMascotas {
 			return tier2[randomNumber - 1];
 		}
 		if (_tier == 3) {
-			int randomNumber = (int) Math.floor(Math.random() * (tier2.length - 1 + 1) + 1);
+			int randomNumber = (int) Math.floor(Math.random() * (tier3.length - 1 + 1) + 1);
 			return tier3[randomNumber - 1];
+		}
+		if (_tier == 100) {
+			int randomNumber = (int) Math.floor(Math.random() * (tierSolo3.length - 1 + 1) + 1);
+			return tierSolo3[randomNumber - 1];
 		}
 		return "";
 

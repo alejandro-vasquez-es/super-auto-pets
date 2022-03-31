@@ -43,6 +43,7 @@ public class MotorModoArena extends MotorJuego {
 		oponente.actualizarAtaque(tienda.ronda);
 		jugador.anadirOro();
 		oponente.anadirOro();
+		batalla.actualizarRonda();
 		return true;
 	}
 

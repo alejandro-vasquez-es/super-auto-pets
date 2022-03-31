@@ -13,7 +13,7 @@ public class Jugador {
 	public Mascota mascotaPeleadora;
 	public int indice = 0;
 	public int totalMascotas = 0;
-	private Jugador oponente;
+	public Jugador oponente;
 
 	public Jugador(Jugador _oponente) {
 		oponente = _oponente;

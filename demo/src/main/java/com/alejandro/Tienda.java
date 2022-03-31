@@ -13,9 +13,12 @@ public class Tienda {
 
 	public String[] mascotas;
 	public String[] comidas;
-	public int tier = 1;
-	int capacidad = 3;
-	public int ronda = 1;
+	// public int tier = 1;
+	public int tier = 3; // pruebas
+	// int capacidad = 3;
+	int capacidad = 4; // pruebas
+	// public int ronda = 1;
+	public int ronda = 4; // pruebas
 
 	public Tienda() {
 		mascotas = new String[capacidad];
@@ -172,7 +175,8 @@ public class Tienda {
 
 	public void fusionarMascota(Jugador _jugador) {
 
-		// Encuentra cuantas mascotas del jugador tienen nivel para evolucionar
+		// Encuentra cuantas mascotas del jugador tienen nivel para evolucionar, o sea
+		// que sean menor a nivel 3
 		int totalNombresMascotasJugador = 0;
 		for (int i = 0; i < _jugador.totalMascotas; i++) {
 			if (_jugador.mascotas[i].nivel < 3) {
@@ -190,6 +194,7 @@ public class Tienda {
 			}
 		}
 
+		// Encuentra el total de las mascotas con posibildad de ser fusionables
 		int totalMascotasFusionables = 0;
 		for (int i = 0; i < nombresMascotasJugador.length; i++) {
 			boolean seIncluye = false;
@@ -203,6 +208,7 @@ public class Tienda {
 				totalMascotasFusionables++;
 		}
 
+		// Crea un arreglo con el nombre de las mascotas fusionables
 		int indiceMascotasFusionables = 0;
 		String[] mascotasFusionables = new String[totalMascotasFusionables];
 		for (int i = 0; i < nombresMascotasJugador.length; i++) {

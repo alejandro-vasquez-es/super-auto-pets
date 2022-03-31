@@ -1,6 +1,10 @@
 package com.alejandro.mascotas;
 
 import com.alejandro.helpers.Comidas;
+import com.alejandro.helpers.Efectos;
+import com.alejandro.helpers.HelperClass;
+import com.alejandro.helpers.NombresMascotas;
+import com.alejandro.mascotas.tier3.Canguro;
 
 public class Mascota {
 
@@ -9,11 +13,13 @@ public class Mascota {
 	public int experiencia = 0;
 	public String[] tipos;
 	public int nivel = 1;
-	public String efecto;
+	public String[] efectos = new String[30];
+	public int indiceEfectos = 0;
 	public String nombre;
 	public int tier = 1;
 	protected Mascota[] aliados;
 	protected Mascota[] enemigos;
+	protected int danosEfectoArmaduraMelon = 0;
 
 	// public Mascota(String _nombre) {
 	// nombre = _nombre;
@@ -72,11 +78,24 @@ public class Mascota {
 	}
 
 	public void atacar(Mascota _oponente) {
+		// Habilidad canguro
+		int totalMascotas = HelperClass.totalMascotas(aliados);
+		int indiceMascota = HelperClass.obtenerIndiceMascota(this, aliados);
+		if (totalMascotas < 4 && aliados[indiceMascota + 1] != null
+				&& aliados[indiceMascota + 1].nombre == NombresMascotas.canguro) {
+			((Canguro) aliados[indiceMascota + 1]).yaQuieroPelear();
+		}
 		_oponente.recibirAtaque(this);
+		danosEfectoArmaduraMelon = 0;
 	}
 
 	public void recibirAtaque(Mascota _oponente) {
-		setVida(vida - _oponente.ataque);
+		// Armadura de melon
+		if (danosEfectoArmaduraMelon > 0 && Efectos.tieneEfecto(efectos, Efectos.armaduraMelon)) {
+			danosEfectoArmaduraMelon -= _oponente.ataque;
+		} else {
+			setVida(vida - _oponente.ataque);
+		}
 	}
 
 	public boolean estaVivo() {
@@ -101,6 +120,23 @@ public class Mascota {
 
 	public void comprarse() {
 
+	}
+
+	public void aumentarEstadisticas(double _vidaExtra, double _ataqueExtra) {
+		vida += _vidaExtra;
+		ataque += _ataqueExtra;
+	}
+
+	// EFECTOS
+
+	public void efectoDebil() {
+		setVida(getVida() - 3);
+	}
+
+	public void efectoArmaduraMelon() {
+		danosEfectoArmaduraMelon = 20;
+		efectos[indiceEfectos] = Efectos.armaduraMelon;
+		indiceEfectos++;
 	}
 
 }

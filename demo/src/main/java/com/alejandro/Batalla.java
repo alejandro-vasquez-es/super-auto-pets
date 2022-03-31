@@ -6,7 +6,8 @@ import com.alejandro.mascotas.Mascota;
 
 public class Batalla {
 
-	private int numeroRonda = 1;
+	// private int numeroRonda = 1;
+	private int numeroRonda = 4; // pruebas
 	private String campo = "Solitario";
 	private Jugador jugador;
 	private Jugador oponente;
@@ -14,6 +15,18 @@ public class Batalla {
 	public Batalla(Jugador _jugador, Jugador _oponente) {
 		jugador = _jugador;
 		oponente = _oponente;
+	}
+
+	public void actualizarRonda() {
+		numeroRonda++;
+		if (numeroRonda == 4) {
+			jugador.ataque = 2;
+			oponente.ataque = 2;
+		}
+		if (numeroRonda == 7) {
+			jugador.ataque = 3;
+			oponente.ataque = 3;
+		}
 	}
 
 	public void verificarTotalMascotas() {

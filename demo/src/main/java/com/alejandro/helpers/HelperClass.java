@@ -17,6 +17,17 @@ import com.alejandro.mascotas.tier2.Puercoespin;
 import com.alejandro.mascotas.tier2.Rata;
 import com.alejandro.mascotas.tier2.Sapo;
 import com.alejandro.mascotas.tier2.Zorro;
+import com.alejandro.mascotas.tier3.Buey;
+import com.alejandro.mascotas.tier3.Buho;
+import com.alejandro.mascotas.tier3.Camello;
+import com.alejandro.mascotas.tier3.Canguro;
+import com.alejandro.mascotas.tier3.Caracol;
+import com.alejandro.mascotas.tier3.Conejo;
+import com.alejandro.mascotas.tier3.Jirafa;
+import com.alejandro.mascotas.tier3.Lobo;
+import com.alejandro.mascotas.tier3.Mapache;
+import com.alejandro.mascotas.tier3.Oveja;
+import com.alejandro.mascotas.tier3.Tortuga;
 
 public class HelperClass {
 
@@ -80,6 +91,30 @@ public class HelperClass {
 				return new Zorro(_aliados, _enemigos);
 			case NombresMascotas.arana:
 				return new Arana(_aliados, _enemigos);
+
+			// TIER 3
+			case NombresMascotas.camello:
+				return new Camello(_aliados, _enemigos);
+			case NombresMascotas.mapache:
+				return new Mapache(_aliados, _enemigos);
+			case NombresMascotas.jirafa:
+				return new Jirafa(_aliados, _enemigos);
+			case NombresMascotas.tortuga:
+				return new Tortuga(_aliados, _enemigos);
+			case NombresMascotas.caracol:
+				return new Caracol(_aliados, _enemigos);
+			case NombresMascotas.oveja:
+				return new Oveja(_aliados, _enemigos);
+			case NombresMascotas.conejo:
+				return new Conejo(_aliados, _enemigos);
+			case NombresMascotas.lobo:
+				return new Lobo(_aliados, _enemigos);
+			case NombresMascotas.buey:
+				return new Buey(_aliados, _enemigos);
+			case NombresMascotas.canguro:
+				return new Canguro(_aliados, _enemigos);
+			case NombresMascotas.buho:
+				return new Buho(_aliados, _enemigos);
 
 			default:
 				return new Mascota(_aliados, _enemigos);
