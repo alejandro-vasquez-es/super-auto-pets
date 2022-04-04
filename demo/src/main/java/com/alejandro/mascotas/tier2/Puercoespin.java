@@ -15,6 +15,7 @@ public class Puercoespin extends Mascota {
 
 	@Override
 	public void morir() {
+		super.morir();
 		espinasSalvajes(aliados);
 		espinasSalvajes(enemigos);
 	}

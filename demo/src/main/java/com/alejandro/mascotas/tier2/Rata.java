@@ -16,6 +16,7 @@ public class Rata extends Mascota {
 
 	@Override
 	public void morir() {
+		super.morir();
 		ayudaHipocrita();
 	}
 

@@ -16,6 +16,7 @@ public class Arana extends Mascota {
 
 	@Override
 	public void morir() {
+		super.morir();
 		libearcion();
 	}
 

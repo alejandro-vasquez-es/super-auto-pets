@@ -13,12 +13,12 @@ public class Tienda {
 
 	public String[] mascotas;
 	public String[] comidas;
-	// public int tier = 1;
-	public int tier = 3; // pruebas
-	// int capacidad = 3;
-	int capacidad = 4; // pruebas
-	// public int ronda = 1;
-	public int ronda = 4; // pruebas
+	public int tier = 1;
+	// public int tier = 3; // pruebas
+	int capacidad = 3;
+	// int capacidad = 4; // pruebas
+	public int ronda = 1;
+	// public int ronda = 4; // pruebas
 
 	public Tienda() {
 		mascotas = new String[capacidad];
@@ -153,12 +153,13 @@ public class Tienda {
 					}
 					opcionesMascotas[opcionesMascotas.length - 1] = (opcionesMascotas.length) + "- cancelar compra";
 
-					System.out.println("¿A cual de tus mascotas deseas dar la comida?");
+					HelperClass.imprimirTextoGuiones("¿A cual de tus mascotas deseas dar la comida?");
 					Menu menuMascotas = new Menu(opcionesMascotas);
 					int opcionMascota = menuMascotas.getOpcion();
 
 					if (opcionMascota != opcionesMascotas.length) {
 						_jugador.oro -= 3; // le resta al _jugador el precio de la comida
+						_jugador.oroUsado += 3;
 						_jugador.mascotas[opcionMascota - 1].comer(comidas[opcion - 1]);
 						System.out.println("Ahora pasas a tener " + _jugador.oro + " de oro");
 					}
@@ -239,6 +240,7 @@ public class Tienda {
 			if (_jugador.oro >= 3) {
 				_jugador.buscarMascota(nombre).fusionar();
 				_jugador.oro -= 3;
+				_jugador.oroUsado += 3;
 				System.out.println("Ahora tienes un total de " + _jugador.oro + " de oro");
 			} else {
 				System.out.println("No tienes el oro suficiente para comprar una mascota y fusionarla");

@@ -15,6 +15,7 @@ public class Mapache extends Mascota {
 
 	@Override
 	public void morir() {
+		super.morir();
 		repartirPoder();
 	}
 

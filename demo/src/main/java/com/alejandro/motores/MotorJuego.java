@@ -18,6 +18,7 @@ public class MotorJuego {
 			"1- Batallar",
 			"2- Acciones entre batallas",
 	});
+	public boolean juegoTerminado = false;
 
 	public MotorJuego() {
 		jugador = new JugadorReal(null);

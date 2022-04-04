@@ -15,11 +15,17 @@ public class Mascota {
 	public int nivel = 1;
 	public String[] efectos = new String[30];
 	public int indiceEfectos = 0;
+	public String[] comidas = new String[30];
+	public int indiceComidas = 0;
 	public String nombre;
 	public int tier = 1;
-	protected Mascota[] aliados;
+	public Mascota[] aliados;
 	protected Mascota[] enemigos;
 	protected int danosEfectoArmaduraMelon = 0;
+	public boolean estaDesmayado = false;
+	public boolean pastelitoQuitado = false;
+	public int totalDanoCausado = 0;
+	public int totalDanoRecibido = 0;
 
 	// public Mascota(String _nombre) {
 	// nombre = _nombre;
@@ -87,6 +93,7 @@ public class Mascota {
 		}
 		_oponente.recibirAtaque(this);
 		danosEfectoArmaduraMelon = 0;
+		totalDanoCausado += ataque;
 	}
 
 	public void recibirAtaque(Mascota _oponente) {
@@ -94,8 +101,14 @@ public class Mascota {
 		if (danosEfectoArmaduraMelon > 0 && Efectos.tieneEfecto(efectos, Efectos.armaduraMelon)) {
 			danosEfectoArmaduraMelon -= _oponente.ataque;
 		} else {
+			if (Comidas.tieneComida(comidas, Comidas.ajo))
+				ajo();
 			setVida(vida - _oponente.ataque);
 		}
+		if (Comidas.tieneComida(comidas, Comidas.naranja) && !Comidas.tieneComida(_oponente.comidas, Comidas.naranja)) {
+			naranja(_oponente);
+		}
+		totalDanoRecibido += _oponente.getAtaque();
 	}
 
 	public boolean estaVivo() {
@@ -108,6 +121,9 @@ public class Mascota {
 	}
 
 	public void morir() {
+		if (Comidas.tieneComida(comidas, Comidas.miel)) {
+			miel();
+		}
 	}
 
 	public void venderse() {
@@ -115,7 +131,19 @@ public class Mascota {
 	}
 
 	public void iniciarBatalla() {
+		if (Comidas.tieneComida(comidas, Comidas.huesoDeCarne)) {
+			huesoDeCarneInicio();
+		}
+	}
 
+	public void terminarBatalla() {
+		if (Comidas.tieneComida(comidas, Comidas.huesoDeCarne)) {
+			huesoDeCarneFinal();
+		}
+		if (Comidas.tieneComida(comidas, Comidas.pastelito) && !pastelitoQuitado) {
+			setAtaque(getAtaque() + 3);
+			setVida(getVida() + 3);
+		}
 	}
 
 	public void comprarse() {
@@ -137,6 +165,40 @@ public class Mascota {
 		danosEfectoArmaduraMelon = 20;
 		efectos[indiceEfectos] = Efectos.armaduraMelon;
 		indiceEfectos++;
+	}
+
+	// COMIDAS
+	public void naranja(Mascota _oponente) {
+		double ataqueInicial = ataque;
+		setAtaque(0.1 * _oponente.getAtaque());
+		atacar(_oponente);
+		setAtaque(ataqueInicial);
+		// solo se puede ejecutar una vez
+	}
+
+	public void miel() {
+		aliados[HelperClass.obtenerIndiceMascota(this, aliados)] = new Abeja(aliados, enemigos);
+		// solo se puede ejecutar una vez
+	}
+
+	public void huesoDeCarneInicio() {
+		setAtaque(ataque + 5);
+		// quitar cuando acabe la batalla
+	}
+
+	public void huesoDeCarneFinal() {
+		setAtaque(ataque - 5);
+		// quitar cuando acabe la batalla
+	}
+
+	public void pastilaParaDormir() {
+		estaDesmayado = true;
+		// TODO: Aplicar permantentemente los efectos cuando este desmayado
+	}
+
+	public void ajo() {
+		// Se aplica cuando lo atacan
+		setVida(vida + 2);
 	}
 
 }

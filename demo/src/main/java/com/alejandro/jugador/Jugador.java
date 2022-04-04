@@ -14,6 +14,11 @@ public class Jugador {
 	public int indice = 0;
 	public int totalMascotas = 0;
 	public Jugador oponente;
+	public Mascota[] mascotasUsadas = new Mascota[200];
+	public int totalMascotasUsadas = 0;
+	public int totalDanoCausado = 0;
+	public int totalDanoRecibido = 0;
+	public int oroUsado = 0;
 
 	public Jugador(Jugador _oponente) {
 		oponente = _oponente;
@@ -24,7 +29,13 @@ public class Jugador {
 	}
 
 	public void danarOponente() {
-		oponente.vida -= ataque;
+		oponente.recibirAtaque();
+		totalDanoCausado += ataque;
+	}
+
+	public void recibirAtaque() {
+		vida -= oponente.ataque;
+		totalDanoRecibido += oponente.ataque;
 	}
 
 	public void actualizarAtaque(int _ronda) {
@@ -34,12 +45,32 @@ public class Jugador {
 			ataque = 3;
 	}
 
+	public void agregarMascotasUsadas() {
+		for (Mascota mascota : mascotas) {
+			if (mascota != null) {
+
+				boolean mascotaExiste = false;
+				for (int i = 0; i < totalMascotasUsadas; i++) {
+					if (mascotasUsadas[i].equals(mascota)) {
+						mascotaExiste = true;
+						break;
+					}
+				}
+				if (!mascotaExiste) {
+					mascotasUsadas[totalMascotasUsadas] = mascota;
+					totalMascotasUsadas++;
+				}
+			}
+		}
+	}
+
 	public boolean comprarMascota(String _nombre) {
 
 		if (totalMascotas < 5) {
-			mascotas[indice] = HelperClass.instanciarTipoNombre(_nombre, mascotas, oponente.mascotas);
-			mascotas[indice].comprarse();
+			mascotas[totalMascotas] = HelperClass.instanciarTipoNombre(_nombre, mascotas, oponente.mascotas);
+			mascotas[totalMascotas].comprarse();
 			oro -= 3;
+			oroUsado += 3;
 			totalMascotas++;
 			indice++;
 			return true;
@@ -87,11 +118,13 @@ public class Jugador {
 			}
 		}
 
-		mascotas[indiceMascota] = null;
-		for (int i = indiceMascota; i < mascotas.length - 1; i++) {
-			Mascota temp = mascotas[i + 1];
-			mascotas[i + 1] = mascotas[i];
-			mascotas[i] = temp;
+		if (HelperClass.mascotaExiste(_mascota, _mascota.aliados)) {
+			mascotas[indiceMascota] = null;
+			for (int i = indiceMascota; i < mascotas.length - 1; i++) {
+				Mascota temp = mascotas[i + 1];
+				mascotas[i + 1] = mascotas[i];
+				mascotas[i] = temp;
+			}
 		}
 	}
 

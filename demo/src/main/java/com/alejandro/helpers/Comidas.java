@@ -1,5 +1,8 @@
 package com.alejandro.helpers;
 
+import java.util.Arrays;
+
+import com.alejandro.jugador.Jugador;
 import com.alejandro.mascotas.Mascota;
 
 public class Comidas {
@@ -63,13 +66,25 @@ public class Comidas {
 			carne, gelatina
 	};
 
+	public static boolean tieneComida(String[] comidas, String _comida) {
+		return Arrays.stream(comidas).anyMatch(comida -> comida == _comida);
+	}
+
 	public static void ejecutarComida(String _comida, Mascota _mascota) {
+		_mascota.comidas[_mascota.indiceComidas] = _comida;
+		_mascota.indiceComidas++;
 		switch (_comida) {
 			case manzana:
 				ejecutarManzana(_mascota);
 				break;
 			case pastelito:
 				ejecutarPastelito(_mascota);
+				break;
+			case ensalada:
+				ejecutarEnsalada(_mascota.aliados);
+				break;
+			case pera:
+				ejecutarPera(_mascota);
 				break;
 
 			default:
@@ -88,6 +103,17 @@ public class Comidas {
 
 	}
 
+	public static void ejecutarPera(Mascota _mascota) {
+		if (!_mascota.pastelitoQuitado) {
+			System.out.println("Tu mascota " + _mascota.nombre + " pasó de tener " + _mascota.getAtaque()
+					+ " de ataque y " + _mascota.getVida() + " de vida");
+			_mascota.setAtaque(_mascota.getAtaque() + 2);
+			_mascota.setVida(_mascota.getVida() + 2);
+			System.out.println("a tener " + _mascota.getAtaque() + " de ataque y " + _mascota.getVida() + " de vida");
+		}
+
+	}
+
 	public static void ejecutarPastelito(Mascota _mascota) {
 
 		System.out.println("Tu mascota " + _mascota.nombre + " pasó de tener " + _mascota.getAtaque()
@@ -96,6 +122,21 @@ public class Comidas {
 		_mascota.setVida(_mascota.getVida() + 3);
 		System.out.println("a tener " + _mascota.getAtaque() + " de ataque y " + _mascota.getVida() + " de vida");
 
+	}
+
+	public static void ejecutarEnsalada(Mascota[] mascotas) {
+		Mascota mascotaAlimentada = null;
+		for (int i = 0; i < 2; i++) {
+			Mascota mascotaAleatoria = HelperClass.obtenerMascotaAleatoria(mascotas,
+					HelperClass.totalMascotas(mascotas));
+			while (mascotaAleatoria.equals(mascotaAlimentada) && HelperClass.totalMascotas(mascotas) != 1) {
+				mascotaAleatoria = HelperClass.obtenerMascotaAleatoria(mascotas, HelperClass.totalMascotas(mascotas));
+			}
+			mascotaAlimentada = mascotaAleatoria;
+			mascotaAleatoria.setAtaque(mascotaAleatoria.getAtaque() + 1);
+			mascotaAleatoria.setVida(mascotaAleatoria.getVida() + 1);
+			System.out.println("A tu mascota " + mascotaAleatoria.nombre + " le ha subida la vida y el ataque en 1 ");
+		}
 	}
 
 }

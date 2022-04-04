@@ -1,14 +1,15 @@
 package com.alejandro;
 
 import com.alejandro.helpers.HelperClass;
+import com.alejandro.helpers.Menu;
+import com.alejandro.helpers.NombresTipos;
 import com.alejandro.jugador.Jugador;
 import com.alejandro.mascotas.Mascota;
 
 public class Batalla {
 
-	// private int numeroRonda = 1;
-	private int numeroRonda = 4; // pruebas
-	private String campo = "Solitario";
+	public int numeroRonda = 1;
+	// private int numeroRonda = 4; // pruebas
 	private Jugador jugador;
 	private Jugador oponente;
 
@@ -35,6 +36,7 @@ public class Batalla {
 	}
 
 	public void iniciarBatalla() {
+		Campos.seleccionarCampo(jugador, oponente);
 		aplicarHabilidadesInicioBatalla();
 
 		jugador.setMascotaPeleadora();
@@ -45,6 +47,8 @@ public class Batalla {
 			verificarTotalMascotas();
 		}
 
+		aplicarEfectosFinal();
+
 		verificarMascotasMuertas(jugador);
 		verificarMascotasMuertas(oponente);
 
@@ -54,6 +58,21 @@ public class Batalla {
 			ganarBatalla(oponente, "oponente");
 		} else if (oponente.totalMascotas == 0) {
 			ganarBatalla(jugador, "jugador");
+		}
+
+	}
+
+	public void aplicarEfectosFinal() {
+
+		for (int i = 0; i < oponente.totalMascotas; i++) {
+			Mascota mascota = oponente.mascotas[i];
+			mascota.terminarBatalla();
+
+		}
+
+		for (int i = 0; i < jugador.totalMascotas; i++) {
+			Mascota mascota = jugador.mascotas[i];
+			mascota.terminarBatalla();
 		}
 
 	}
@@ -112,6 +131,9 @@ public class Batalla {
 	}
 
 	public void batallaIndividual() {
+		jugador.setMascotaPeleadora();
+		oponente.setMascotaPeleadora();
+
 		jugador.mascotaPeleadora.atacar(oponente.mascotaPeleadora);
 		oponente.mascotaPeleadora.atacar(jugador.mascotaPeleadora);
 

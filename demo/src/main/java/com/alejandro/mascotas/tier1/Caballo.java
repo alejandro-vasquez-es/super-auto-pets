@@ -16,6 +16,7 @@ public class Caballo extends Mascota {
 
 	@Override
 	public void iniciarBatalla() {
+		super.iniciarBatalla();
 		rugidoAliado();
 	}
 

@@ -16,6 +16,7 @@ public class Tortuga extends Mascota {
 
 	@Override
 	public void morir() {
+		super.morir();
 		proteccionAliada();
 	}
 

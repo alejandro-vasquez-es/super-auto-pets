@@ -15,6 +15,7 @@ public class Hormiga extends Mascota {
 	}
 
 	public void morir() {
+		super.morir();
 		companerismo();
 	}
 

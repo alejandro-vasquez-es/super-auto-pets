@@ -16,6 +16,7 @@ public class Dodo extends Mascota {
 
 	@Override
 	public void iniciarBatalla() {
+		super.iniciarBatalla();
 		divisionDePoder();
 	}
 

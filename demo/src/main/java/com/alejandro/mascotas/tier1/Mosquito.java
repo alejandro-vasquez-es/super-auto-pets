@@ -14,6 +14,7 @@ public class Mosquito extends Mascota {
 
 	@Override
 	public void iniciarBatalla() {
+		super.iniciarBatalla();
 		piequeteInicial();
 	}
 

@@ -16,6 +16,7 @@ public class Camello extends Mascota {
 
 	@Override
 	public void iniciarBatalla() {
+		super.iniciarBatalla();
 		joroba();
 	}
 

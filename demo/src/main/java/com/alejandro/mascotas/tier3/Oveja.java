@@ -16,6 +16,7 @@ public class Oveja extends Mascota {
 
 	@Override
 	public void morir() {
+		super.morir();
 		revolucion();
 	}
 

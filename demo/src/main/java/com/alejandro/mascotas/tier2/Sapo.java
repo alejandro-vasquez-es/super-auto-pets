@@ -16,6 +16,7 @@ public class Sapo extends Mascota {
 
 	@Override
 	public void iniciarBatalla() {
+		super.iniciarBatalla();
 		metamorfosis();
 	}
 

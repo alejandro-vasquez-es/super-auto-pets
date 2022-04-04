@@ -14,6 +14,7 @@ public class Grillo extends Mascota {
 
 	@Override
 	public void morir() {
+		super.morir();
 		zombificacion();
 	}
 

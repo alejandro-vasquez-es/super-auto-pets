@@ -16,6 +16,7 @@ public class Jirafa extends Mascota {
 
 	@Override
 	public void iniciarBatalla() {
+		super.iniciarBatalla();
 		fortalezaAliada();
 	}
 
