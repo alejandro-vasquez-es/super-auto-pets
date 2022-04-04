@@ -1,5 +1,7 @@
 package com.alejandro;
 
+import java.io.PrintWriter;
+
 import com.alejandro.helpers.HelperClass;
 import com.alejandro.helpers.Menu;
 import com.alejandro.helpers.NombresTipos;
@@ -35,7 +37,7 @@ public class Batalla {
 		oponente.totalMascotas = HelperClass.totalMascotas(oponente.mascotas);
 	}
 
-	public void iniciarBatalla() {
+	public void iniciarBatalla(PrintWriter printWriter) {
 		Campos.seleccionarCampo(jugador, oponente);
 		aplicarHabilidadesInicioBatalla();
 
@@ -43,7 +45,7 @@ public class Batalla {
 		oponente.setMascotaPeleadora();
 
 		while (jugador.totalMascotas != 0 && oponente.totalMascotas != 0) {
-			batallaIndividual();
+			batallaIndividual(printWriter);
 			verificarTotalMascotas();
 		}
 
@@ -130,12 +132,33 @@ public class Batalla {
 		oponente = _oponente;
 	}
 
-	public void batallaIndividual() {
+	public void batallaIndividual(PrintWriter printWriter) {
 		jugador.setMascotaPeleadora();
 		oponente.setMascotaPeleadora();
+		printWriter.printf("Pelea individual: %s vs %s \n", jugador.mascotaPeleadora.nombre,
+				oponente.mascotaPeleadora.nombre);
+
+		double vidaInicialMascotaJugador = jugador.mascotaPeleadora.getVida();
+		double vidaInicialMascotaOponente = oponente.mascotaPeleadora.getVida();
+
+		printWriter.print("la mascota " + jugador.mascotaPeleadora.nombre + " realizo "
+				+ jugador.mascotaPeleadora.getAtaque() + " de dano \n");
+		printWriter.print("la mascota " + oponente.mascotaPeleadora.nombre + " realizo "
+				+ oponente.mascotaPeleadora.getAtaque() + " de dano \n");
 
 		jugador.mascotaPeleadora.atacar(oponente.mascotaPeleadora);
 		oponente.mascotaPeleadora.atacar(jugador.mascotaPeleadora);
+
+		printWriter.print("la mascota " + jugador.mascotaPeleadora.nombre + " recibio "
+				+ (vidaInicialMascotaJugador - jugador.mascotaPeleadora.getVida()) + " de dano y tenia "
+				+ vidaInicialMascotaJugador + " de vida, posee " + jugador.mascotaPeleadora.getVida()
+				+ " de vida actualmente \n");
+		printWriter.print("la mascota " + oponente.mascotaPeleadora.nombre + " recibio "
+				+ (vidaInicialMascotaOponente - oponente.mascotaPeleadora.getVida()) + " de dano y tenia "
+				+ vidaInicialMascotaOponente + " de vida, posee " + oponente.mascotaPeleadora.getVida()
+				+ " de vida actualmente \n");
+		printWriter.print("la mascota " + jugador.mascotaPeleadora.nombre + " realizo su habilidad exitosamente \n");
+		printWriter.print("la mascota " + oponente.mascotaPeleadora.nombre + " realizo su habilidad exitosamente \n");
 
 		intentarMatarMascota(jugador.mascotaPeleadora, jugador);
 		jugador.setMascotaPeleadora();

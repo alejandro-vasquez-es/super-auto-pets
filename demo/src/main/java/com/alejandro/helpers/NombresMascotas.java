@@ -97,19 +97,27 @@ public class NombresMascotas {
 			mamut, leopardo, gorila, pulpo, mosca, quetzal, camaleon
 	};
 
+	public static String[] tierSolo1 = {
+			hormiga, pescado, mosquito, grillo, castor, caballo, nutria, escarabajo
+	};
+	public static String[] tierSolo2 = {
+			sapo, dodo, elefante, puercoespin, pavorreal, rata, zorro, arana,
+	};
 	public static String[] tierSolo3 = {
-			camello,
-			mapache,
-			jirafa,
-			tortuga,
-			caracol,
-			oveja,
-			conejo,
-			lobo,
-			buey,
-			canguro,
-			buho,
-
+			camello, mapache, jirafa, tortuga, caracol, oveja, conejo, lobo, buey, canguro, buho,
+	};
+	public static String[] tierSolo4 = {
+			venado, loro, hipopotamo, delfin, puma, ballena, ardilla,
+			llama
+	};
+	public static String[] tierSolo5 = {
+			foca, jaguar, escorpion, rinoceronte, mono, cocodrilo, vaca, chompipe
+	};
+	public static String[] tierSolo6 = {
+			camello, mapache, jirafa, tortuga, caracol, oveja, conejo, lobo, buey, canguro, buho,
+	};
+	public static String[] tierSolo7 = {
+			camello, mapache, jirafa, tortuga, caracol, oveja, conejo, lobo, buey, canguro, buho, quetzal, camaleon
 	};
 
 	public static String obtenerMascotaAleatoria(int _tier) {
@@ -142,9 +150,34 @@ public class NombresMascotas {
 			int randomNumber = (int) Math.floor(Math.random() * (tier7.length - 1 + 1) + 1);
 			return tier7[randomNumber - 1];
 		}
+
 		if (_tier == 100) {
+			int randomNumber = (int) Math.floor(Math.random() * (tierSolo1.length - 1 + 1) + 1);
+			return tierSolo1[randomNumber - 1];
+		}
+		if (_tier == 200) {
+			int randomNumber = (int) Math.floor(Math.random() * (tierSolo2.length - 1 + 1) + 1);
+			return tierSolo2[randomNumber - 1];
+		}
+		if (_tier == 300) {
 			int randomNumber = (int) Math.floor(Math.random() * (tierSolo3.length - 1 + 1) + 1);
 			return tierSolo3[randomNumber - 1];
+		}
+		if (_tier == 400) {
+			int randomNumber = (int) Math.floor(Math.random() * (tierSolo4.length - 1 + 1) + 1);
+			return tierSolo4[randomNumber - 1];
+		}
+		if (_tier == 500) {
+			int randomNumber = (int) Math.floor(Math.random() * (tierSolo5.length - 1 + 1) + 1);
+			return tierSolo5[randomNumber - 1];
+		}
+		if (_tier == 600) {
+			int randomNumber = (int) Math.floor(Math.random() * (tierSolo6.length - 1 + 1) + 1);
+			return tierSolo6[randomNumber - 1];
+		}
+		if (_tier == 700) {
+			int randomNumber = (int) Math.floor(Math.random() * (tierSolo7.length - 1 + 1) + 1);
+			return tierSolo7[randomNumber - 1];
 		}
 		return "";
 

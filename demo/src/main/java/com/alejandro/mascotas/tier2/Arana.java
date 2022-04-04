@@ -22,7 +22,7 @@ public class Arana extends Mascota {
 
 	public void libearcion() {
 		int indiceArana = HelperClass.obtenerIndiceMascota(this, aliados);
-		String nombreMascota = NombresMascotas.obtenerMascotaAleatoria(100);
+		String nombreMascota = NombresMascotas.obtenerMascotaAleatoria(300);
 		Mascota mascotaInvocada = HelperClass.instanciarTipoNombre(nombreMascota, aliados, enemigos);
 		mascotaInvocada.nivel = nivel;
 		mascotaInvocada.setVida(2);

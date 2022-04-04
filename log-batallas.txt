@@ -1,0 +1,205 @@
+El juego ha iniciado en modo Arena 
+Empieza el turno de batalla # 1 
+Pelea individual: mosquito vs nutria 
+la mascota mosquito realizo 2.0 de dano 
+la mascota nutria realizo 1.0 de dano 
+la mascota mosquito recibio 1.0 de dano y tenia 2.0 de vida, posee 1.0 de vida actualmente 
+la mascota nutria recibio 2.0 de dano y tenia 1.0 de vida, posee -1.0 de vida actualmente 
+la mascota mosquito realizo su habilidad exitosamente 
+la mascota nutria realizo su habilidad exitosamente 
+Pelea individual: mosquito vs hormiga 
+la mascota mosquito realizo 2.0 de dano 
+la mascota hormiga realizo 3.0 de dano 
+la mascota mosquito recibio 3.0 de dano y tenia 1.0 de vida, posee -2.0 de vida actualmente 
+la mascota hormiga recibio 2.0 de dano y tenia 1.0 de vida, posee -1.0 de vida actualmente 
+la mascota mosquito realizo su habilidad exitosamente 
+la mascota hormiga realizo su habilidad exitosamente 
+Pelea individual: hormiga vs nutria 
+la mascota hormiga realizo 3.0 de dano 
+la mascota nutria realizo 3.0 de dano 
+la mascota hormiga recibio 3.0 de dano y tenia 2.0 de vida, posee -1.0 de vida actualmente 
+la mascota nutria recibio 3.0 de dano y tenia 2.0 de vida, posee -1.0 de vida actualmente 
+la mascota hormiga realizo su habilidad exitosamente 
+la mascota nutria realizo su habilidad exitosamente 
+Empieza el turno de batalla # 2 
+Pelea individual: nutria vs dodo 
+la mascota nutria realizo 3.0 de dano 
+la mascota dodo realizo 2.0 de dano 
+la mascota nutria recibio 2.0 de dano y tenia 3.0 de vida, posee 1.0 de vida actualmente 
+la mascota dodo recibio 3.0 de dano y tenia 3.0 de vida, posee 0.0 de vida actualmente 
+la mascota nutria realizo su habilidad exitosamente 
+la mascota dodo realizo su habilidad exitosamente 
+Pelea individual: nutria vs elefante 
+la mascota nutria realizo 3.0 de dano 
+la mascota elefante realizo 3.0 de dano 
+la mascota nutria recibio 3.0 de dano y tenia 1.0 de vida, posee -2.0 de vida actualmente 
+la mascota elefante recibio 3.0 de dano y tenia 5.0 de vida, posee 2.0 de vida actualmente 
+la mascota nutria realizo su habilidad exitosamente 
+la mascota elefante realizo su habilidad exitosamente 
+Pelea individual: pavorreal vs elefante 
+la mascota pavorreal realizo 6.0 de dano 
+la mascota elefante realizo 3.0 de dano 
+la mascota pavorreal recibio 3.0 de dano y tenia 9.0 de vida, posee 6.0 de vida actualmente 
+la mascota elefante recibio 6.0 de dano y tenia 2.0 de vida, posee -4.0 de vida actualmente 
+la mascota pavorreal realizo su habilidad exitosamente 
+la mascota elefante realizo su habilidad exitosamente 
+Pelea individual: pavorreal vs pavorreal 
+la mascota pavorreal realizo 9.0 de dano 
+la mascota pavorreal realizo 13.5 de dano 
+la mascota pavorreal recibio 20.25 de dano y tenia 6.0 de vida, posee -14.25 de vida actualmente 
+la mascota pavorreal recibio 9.0 de dano y tenia 7.0 de vida, posee -2.0 de vida actualmente 
+la mascota pavorreal realizo su habilidad exitosamente 
+la mascota pavorreal realizo su habilidad exitosamente 
+Empieza el turno de batalla # 3 
+Pelea individual: pavorreal vs arana 
+la mascota pavorreal realizo 6.0 de dano 
+la mascota arana realizo 2.0 de dano 
+la mascota pavorreal recibio 2.0 de dano y tenia 9.0 de vida, posee 7.0 de vida actualmente 
+la mascota arana recibio 6.0 de dano y tenia 2.0 de vida, posee -4.0 de vida actualmente 
+la mascota pavorreal realizo su habilidad exitosamente 
+la mascota arana realizo su habilidad exitosamente 
+Pelea individual: pavorreal vs jirafa 
+la mascota pavorreal realizo 9.0 de dano 
+la mascota jirafa realizo 2.0 de dano 
+la mascota pavorreal recibio 2.0 de dano y tenia 7.0 de vida, posee 5.0 de vida actualmente 
+la mascota jirafa recibio 9.0 de dano y tenia 2.0 de vida, posee -7.0 de vida actualmente 
+la mascota pavorreal realizo su habilidad exitosamente 
+la mascota jirafa realizo su habilidad exitosamente 
+Pelea individual: pavorreal vs pavorreal 
+la mascota pavorreal realizo 13.5 de dano 
+la mascota pavorreal realizo 2.0 de dano 
+la mascota pavorreal recibio 3.0 de dano y tenia 5.0 de vida, posee 2.0 de vida actualmente 
+la mascota pavorreal recibio 13.5 de dano y tenia 5.0 de vida, posee -8.5 de vida actualmente 
+la mascota pavorreal realizo su habilidad exitosamente 
+la mascota pavorreal realizo su habilidad exitosamente 
+Pelea individual: pavorreal vs elefante 
+la mascota pavorreal realizo 20.25 de dano 
+la mascota elefante realizo 3.0 de dano 
+la mascota pavorreal recibio 3.0 de dano y tenia 2.0 de vida, posee -1.0 de vida actualmente 
+la mascota elefante recibio 20.25 de dano y tenia 5.0 de vida, posee -15.25 de vida actualmente 
+la mascota pavorreal realizo su habilidad exitosamente 
+la mascota elefante realizo su habilidad exitosamente 
+Pelea individual: pavorreal vs rata 
+la mascota pavorreal realizo 6.0 de dano 
+la mascota rata realizo 4.0 de dano 
+la mascota pavorreal recibio 4.0 de dano y tenia 9.0 de vida, posee 5.0 de vida actualmente 
+la mascota rata recibio 6.0 de dano y tenia 4.0 de vida, posee -2.0 de vida actualmente 
+la mascota pavorreal realizo su habilidad exitosamente 
+la mascota rata realizo su habilidad exitosamente 
+Empieza el turno de batalla # 4 
+Pelea individual: pavorreal vs conejo 
+la mascota pavorreal realizo 10.0 de dano 
+la mascota conejo realizo 3.0 de dano 
+la mascota pavorreal recibio 3.0 de dano y tenia 5.0 de vida, posee 2.0 de vida actualmente 
+la mascota conejo recibio 10.0 de dano y tenia 2.0 de vida, posee -8.0 de vida actualmente 
+la mascota pavorreal realizo su habilidad exitosamente 
+la mascota conejo realizo su habilidad exitosamente 
+Pelea individual: pavorreal vs camello 
+la mascota pavorreal realizo 15.0 de dano 
+la mascota camello realizo 2.0 de dano 
+la mascota pavorreal recibio 2.0 de dano y tenia 2.0 de vida, posee 0.0 de vida actualmente 
+la mascota camello recibio 15.0 de dano y tenia 5.0 de vida, posee -10.0 de vida actualmente 
+la mascota pavorreal realizo su habilidad exitosamente 
+la mascota camello realizo su habilidad exitosamente 
+Pelea individual: pavorreal vs oveja 
+la mascota pavorreal realizo 3.0 de dano 
+la mascota oveja realizo 3.0 de dano 
+la mascota pavorreal recibio 3.0 de dano y tenia 5.0 de vida, posee 2.0 de vida actualmente 
+la mascota oveja recibio 3.0 de dano y tenia 4.0 de vida, posee 1.0 de vida actualmente 
+la mascota pavorreal realizo su habilidad exitosamente 
+la mascota oveja realizo su habilidad exitosamente 
+Pelea individual: pavorreal vs oveja 
+la mascota pavorreal realizo 4.5 de dano 
+la mascota oveja realizo 3.0 de dano 
+la mascota pavorreal recibio 3.0 de dano y tenia 2.0 de vida, posee -1.0 de vida actualmente 
+la mascota oveja recibio 4.5 de dano y tenia 1.0 de vida, posee -3.5 de vida actualmente 
+la mascota pavorreal realizo su habilidad exitosamente 
+la mascota oveja realizo su habilidad exitosamente 
+Pelea individual: dirty rat vs null 
+la mascota dirty rat realizo 2.0 de dano 
+la mascota null realizo 2.0 de dano 
+la mascota dirty rat recibio 2.0 de dano y tenia 1.0 de vida, posee -1.0 de vida actualmente 
+la mascota null recibio 2.0 de dano y tenia 2.0 de vida, posee 0.0 de vida actualmente 
+la mascota dirty rat realizo su habilidad exitosamente 
+la mascota null realizo su habilidad exitosamente 
+Pelea individual: dirty rat vs null 
+la mascota dirty rat realizo 2.0 de dano 
+la mascota null realizo 2.0 de dano 
+la mascota dirty rat recibio 2.0 de dano y tenia -1.0 de vida, posee -3.0 de vida actualmente 
+la mascota null recibio 2.0 de dano y tenia 2.0 de vida, posee 0.0 de vida actualmente 
+la mascota dirty rat realizo su habilidad exitosamente 
+la mascota null realizo su habilidad exitosamente 
+Empieza el turno de batalla # 5 
+Pelea individual: jirafa vs jirafa 
+la mascota jirafa realizo 2.0 de dano 
+la mascota jirafa realizo 2.0 de dano 
+la mascota jirafa recibio 2.0 de dano y tenia 5.0 de vida, posee 3.0 de vida actualmente 
+la mascota jirafa recibio 2.0 de dano y tenia 5.0 de vida, posee 3.0 de vida actualmente 
+la mascota jirafa realizo su habilidad exitosamente 
+la mascota jirafa realizo su habilidad exitosamente 
+Pelea individual: jirafa vs jirafa 
+la mascota jirafa realizo 2.0 de dano 
+la mascota jirafa realizo 2.0 de dano 
+la mascota jirafa recibio 2.0 de dano y tenia 3.0 de vida, posee 1.0 de vida actualmente 
+la mascota jirafa recibio 2.0 de dano y tenia 3.0 de vida, posee 1.0 de vida actualmente 
+la mascota jirafa realizo su habilidad exitosamente 
+la mascota jirafa realizo su habilidad exitosamente 
+Pelea individual: jirafa vs jirafa 
+la mascota jirafa realizo 2.0 de dano 
+la mascota jirafa realizo 2.0 de dano 
+la mascota jirafa recibio 2.0 de dano y tenia 1.0 de vida, posee -1.0 de vida actualmente 
+la mascota jirafa recibio 2.0 de dano y tenia 1.0 de vida, posee -1.0 de vida actualmente 
+la mascota jirafa realizo su habilidad exitosamente 
+la mascota jirafa realizo su habilidad exitosamente 
+Pelea individual: caballo vs lobo 
+la mascota caballo realizo 4.0 de dano 
+la mascota lobo realizo 4.0 de dano 
+la mascota caballo recibio 4.0 de dano y tenia 2.0 de vida, posee -2.0 de vida actualmente 
+la mascota lobo recibio 4.0 de dano y tenia 5.0 de vida, posee 1.0 de vida actualmente 
+la mascota caballo realizo su habilidad exitosamente 
+la mascota lobo realizo su habilidad exitosamente 
+Empieza el turno de batalla # 6 
+Pelea individual: llama vs lobo 
+la mascota llama realizo 3.0 de dano 
+la mascota lobo realizo 4.0 de dano 
+la mascota llama recibio 4.0 de dano y tenia 6.0 de vida, posee 2.0 de vida actualmente 
+la mascota lobo recibio 3.0 de dano y tenia 1.0 de vida, posee -2.0 de vida actualmente 
+la mascota llama realizo su habilidad exitosamente 
+la mascota lobo realizo su habilidad exitosamente 
+Pelea individual: llama vs conejo 
+la mascota llama realizo 3.0 de dano 
+la mascota conejo realizo 3.0 de dano 
+la mascota llama recibio 3.0 de dano y tenia 2.0 de vida, posee -1.0 de vida actualmente 
+la mascota conejo recibio 3.0 de dano y tenia 2.0 de vida, posee -1.0 de vida actualmente 
+la mascota llama realizo su habilidad exitosamente 
+la mascota conejo realizo su habilidad exitosamente 
+Empieza el turno de batalla # 7 
+Pelea individual: caracol vs puma 
+la mascota caracol realizo 3.0 de dano 
+la mascota puma realizo 3.0 de dano 
+la mascota caracol recibio 3.0 de dano y tenia 3.0 de vida, posee 0.0 de vida actualmente 
+la mascota puma recibio 3.0 de dano y tenia 7.0 de vida, posee 4.0 de vida actualmente 
+la mascota caracol realizo su habilidad exitosamente 
+la mascota puma realizo su habilidad exitosamente 
+Pelea individual: castor vs puma 
+la mascota castor realizo 2.0 de dano 
+la mascota puma realizo 3.0 de dano 
+la mascota castor recibio 3.0 de dano y tenia 2.0 de vida, posee -1.0 de vida actualmente 
+la mascota puma recibio 2.0 de dano y tenia 4.0 de vida, posee 2.0 de vida actualmente 
+la mascota castor realizo su habilidad exitosamente 
+la mascota puma realizo su habilidad exitosamente 
+Empieza el turno de batalla # 8 
+Pelea individual: delfin vs puma 
+la mascota delfin realizo 4.0 de dano 
+la mascota puma realizo 3.0 de dano 
+la mascota delfin recibio 3.0 de dano y tenia 6.0 de vida, posee 3.0 de vida actualmente 
+la mascota puma recibio 4.0 de dano y tenia 2.0 de vida, posee -2.0 de vida actualmente 
+la mascota delfin realizo su habilidad exitosamente 
+la mascota puma realizo su habilidad exitosamente 
+Pelea individual: delfin vs loro 
+la mascota delfin realizo 4.0 de dano 
+la mascota loro realizo 5.0 de dano 
+la mascota delfin recibio 5.0 de dano y tenia 3.0 de vida, posee -2.0 de vida actualmente 
+la mascota loro recibio 4.0 de dano y tenia 3.0 de vida, posee -1.0 de vida actualmente 
+la mascota delfin realizo su habilidad exitosamente 
+la mascota loro realizo su habilidad exitosamente 

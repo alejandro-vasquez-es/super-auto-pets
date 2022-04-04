@@ -5,6 +5,7 @@ import java.util.Scanner;
 import com.alejandro.helpers.HelperClass;
 import com.alejandro.helpers.Menu;
 import com.alejandro.motores.MotorModoArena;
+import com.alejandro.motores.MotorModoVersus;
 
 /**
  * Hello world!
@@ -42,7 +43,9 @@ public final class App {
                 arena.iniciarJuego();
                 break;
             case 2:
-                System.out.println("Ejecutando modo versus...");
+                MotorModoVersus versus = new MotorModoVersus();
+                versus.imprimirModo();
+                versus.iniciarJuego();
                 break;
             case 3:
                 System.out.println("Ejecutando modo creativo...");

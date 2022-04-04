@@ -18,11 +18,8 @@ public class IA extends Jugador {
 	}
 
 	public boolean comprarMascotaAleatoria(int tier) {
-		String nombre = NombresMascotas.obtenerMascotaAleatoria(tier);
+		String nombre = NombresMascotas.obtenerMascotaAleatoria(tier * 100);
 		return comprarMascota(nombre);
 	}
-
-	// TODO: Mejorar y revisar el manejo del oro de la ia, rotando entre fusionar y
-	// comprar
 
 }
